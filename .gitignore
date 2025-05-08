@@ -1,0 +1,24 @@
+# C++ object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Build directories (optional if you use CMake or Make)
+build/
+cmake-build-*/
+
+# VS Code workspace files
+.vscode/
+*.code-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Backup or temp files
+*~
+*.log

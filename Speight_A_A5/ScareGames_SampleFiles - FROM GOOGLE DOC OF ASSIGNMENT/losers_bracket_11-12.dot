@@ -1,0 +1,27 @@
+digraph TournamentTree {
+    node0 [label="Mike, (Power: 115)"];
+    node1 [label="Johnny, (Power: 110)"];
+    node2 [label="Johnny, (Power: 110)"];
+    node1 -> node2;
+    node3 [label="Randall, (Power: 100)"];
+    node4 [label="Randall, (Power: 100)"];
+    node3 -> node4;
+    node5 [label="TerryAndTerri, (Power: 85)"];
+    node3 -> node5;
+    node1 -> node3;
+    node0 -> node1;
+    node6 [label="Mike, (Power: 115)"];
+    node7 [label="Mike, (Power: 115)"];
+    node8 [label="Mike, (Power: 115)"];
+    node7 -> node8;
+    node9 [label="Art, (Power: 80)"];
+    node7 -> node9;
+    node6 -> node7;
+    node10 [label="Chet, (Power: 95)"];
+    node11 [label="Squishy, (Power: 75)"];
+    node10 -> node11;
+    node12 [label="Chet, (Power: 95)"];
+    node10 -> node12;
+    node6 -> node10;
+    node0 -> node6;
+}
