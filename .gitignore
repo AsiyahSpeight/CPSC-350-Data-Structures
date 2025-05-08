@@ -1,11 +1,43 @@
+<<<<<<< HEAD
 # C++ object files
 *.o
 *.obj
 
+=======
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+>>>>>>> 8fe9b90e8881251bf008679b9f380de14c435eba
 # Executables
 *.exe
 *.out
 *.app
+<<<<<<< HEAD
 
 # Build directories (optional if you use CMake or Make)
 build/
@@ -22,3 +54,5 @@ Thumbs.db
 # Backup or temp files
 *~
 *.log
+=======
+>>>>>>> 8fe9b90e8881251bf008679b9f380de14c435eba
