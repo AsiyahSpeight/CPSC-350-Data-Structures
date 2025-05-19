@@ -6,58 +6,56 @@
 - **Chapman Email:** aspeight@chapman.edu  
 - **Course:** CPSC-350 (Data Structures and Algorithms)  
 - **Section:** 02  
-- **Assignment:** PA6: Kruskal’s Algorithm – Minimum Spanning Tree
+- **Assignment:** PA6 – Kruskal’s Algorithm: Minimum Spanning Tree
 
 ---
 
 ## Submitted Source Files
 - `main.cpp`  
-- `WGraph.cpp`, `WGraph.h`  
+- `WGraph.cpp`  
+- `WGraph.h`  
+- `graph.txt` *(sample input used for testing)*
 
 ---
 
 ## Description
-This program reads a weighted undirected graph from an input file and computes its **Minimum Spanning Tree (MST)** using **Kruskal’s algorithm**.
+This program reads a weighted, undirected graph from an input file and computes its **Minimum Spanning Tree (MST)** using **Kruskal’s algorithm**.
 
-- The graph is provided as an **adjacency matrix** in a text file.
+- The input file contains an adjacency matrix and ends with the keyword `END`.
 - The MST is constructed using a **Union-Find (Disjoint Set)** structure to avoid cycles.
-- The total cost of the MST is printed.
-- The MST is displayed as an **adjacency matrix** with all non-MST edges set to 0.
+- The program prints:
+  - The total cost of the MST.
+  - An **adjacency matrix** for the MST where non-MST edges are displayed as `0`.
 
 ---
 
 ## Notes on Implementation
-- The core logic for Kruskal’s algorithm is implemented in `computeMST()` inside the `WGraph` class.
-- A vector of edges is sorted by weight.
-- A union-find structure is used to keep track of connected components.
-- Once the MST is formed, the program outputs:
-  - The total cost of the MST.
-  - A matrix showing only the MST edges.
-- Standard Template Library (STL) containers such as `vector`, `set`, and `pair` were used to simplify the implementation.
+- The MST logic is implemented in the `computeMST()` method of the `WGraph` class.
+- A list of edges is created and sorted by weight.
+- A Union-Find structure is used to detect and prevent cycles.
+- STL containers (`vector`, `algorithm`) are used for clarity and performance.
+- Matrix formatting has been verified to match the example output.
 
 ---
 
-## Known Errors / Limitations
-
+## Known Issues or Limitations
 - No known compile-time or runtime errors.
-- The algorithm currently assumes the input graph is **connected**.
-- The output format strictly matches the spec; any deviation will result in a grade penalty, so formatting was verified thoroughly.
+- Assumes input graph is **connected**; otherwise, output may be incomplete.
 
 ---
 
 ## References
-
-- [C++ STL Documentation](https://en.cppreference.com) – for `vector`, `set`, and `sort`.
-- Peer discussion with Chantelle Chan regarding input matrix formatting (classmate, no code sharing).
-- ChatGPT used for debugging union-find logic and validating matrix print format.
+- [C++ STL Documentation – cppreference.com](https://en.cppreference.com) — used for `vector`, `sort`, and syntax clarification.
+- Peer discussion with Chantelle Chan on formatting expectations (no code shared).
+- **ChatGPT** used to debug logic and verify conformance to MST output specification from the assignment PDF.
 
 ---
 
 ## How to Compile and Run
 
 ```bash
-# To compile the program:
-g++ *.cpp -o kruskal.exe
+# Compile using g++
+g++ -std=c++11 -o kruskal main.cpp WGraph.cpp
 
-# To run the executable:
-./kruskal.exe input.txt
+# Run using your input file (e.g. graph.txt)
+./kruskal graph.txt

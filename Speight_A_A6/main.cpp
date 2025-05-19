@@ -6,11 +6,45 @@
  * Assignment: PA6 – Kruskal's Algorithm
  */
 
-/*
-This file should:
-    - Take the input file name as a command-line argument
-    - Read the input file
-    - Construct the WGraph object
-    - Call computeMST() on it
-    - Print the results
-*/
+#include <iostream>
+#include <fstream>
+#include "WGraph.h"
+#include <limits>
+
+int main(int argc, char* argv[]) {
+    if (argc != 2) {
+        std::cerr << "Usage: ./kruskal <filename>" << std::endl;
+        return 1;
+    }
+
+    std::ifstream file(argv[1]);
+    if (!file.is_open()) {
+        std::cerr << "Error opening file." << std::endl;
+        return 1;
+    }
+
+    int n;
+    file >> n;
+
+    WGraph g(n);
+
+    // Read adjacency matrix
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < n; ++j) {
+            double w;
+            file >> w;
+            if (w != 0.0 && w != std::numeric_limits<double>::max())
+                g.addEdge(i, j, w);
+        }
+
+    std::string endCheck;
+    file >> endCheck;
+    if (endCheck != "END") {
+        std::cerr << "Missing END keyword in file." << std::endl;
+        return 1;
+    }
+
+    // Compute and print MST
+    g.computeMST();
+    return 0;
+}
